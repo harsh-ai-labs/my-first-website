@@ -27,7 +27,7 @@
       color: #3b82f6;
       text-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6;
       margin-bottom: 40px;
-      animation: glow 2s ease-in-out infinite alternate;
+      animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease-in-out;
     }
 
     .hero img {
@@ -35,6 +35,7 @@
       filter: drop-shadow(0 0 15px #3b82f6);
       border-radius: 12px;
       margin-bottom: 20px;
+      animation: pulse 3s infinite ease-in-out;
     }
 
     .hero h2 {
@@ -42,24 +43,39 @@
       color: #3b82f6;
       text-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6;
       margin: 0;
-      animation: glow 2s ease-in-out infinite alternate;
+      animation: glow 2s ease-in-out infinite alternate, fadeIn 3s ease-in-out;
     }
 
     .tagline {
       color: #b3c7ff;
       font-size: 1.2rem;
-      margin-top: 10px;
+      margin-top: 15px;
       text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
-      animation: glow 2s ease-in-out infinite alternate;
+      border-right: 2px solid #3b82f6;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) 1s forwards, glow 2s ease-in-out infinite alternate;
     }
 
     @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
-      }
-      to {
-        text-shadow: 0 0 20px #3b82f6, 0 0 30px #3b82f6;
-      }
+      from { text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6; }
+      to { text-shadow: 0 0 20px #3b82f6, 0 0 30px #3b82f6; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { filter: drop-shadow(0 0 10px #3b82f6); }
+      50% { filter: drop-shadow(0 0 25px #3b82f6); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 18ch; }
     }
   </style>
 </head>
