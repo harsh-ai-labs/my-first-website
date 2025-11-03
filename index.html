@@ -3,98 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh AI Labs — Coming Soon</title>
+  <title>Harsh AI Labs</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #001F3F, #001030);
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at top, #001f3f, #000);
-      font-family: "Poppins", sans-serif;
-      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
       text-align: center;
+      margin-top: 80px;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      text-shadow: 0 0 20px cyan;
-    }
-
-    p {
-      margin-top: 15px;
-      color: #ccc;
-      font-size: 1.1rem;
-    }
-
-    #countdown {
-      font-size: 2rem;
-      margin-top: 25px;
-      color: cyan;
+      font-size: 3rem;
       letter-spacing: 2px;
+      margin: 0;
     }
 
-    .social-links {
-      margin-top: 30px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
+    h2 {
+      font-weight: 400;
+      color: #00d4ff;
     }
 
-    .social-links a {
+    .section {
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+      margin-top: 60px;
+      line-height: 1.7;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00d4ff, #0066ff);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 1rem;
       color: white;
-      font-size: 1.5rem;
-      text-decoration: none;
+      cursor: pointer;
       transition: 0.3s;
     }
 
-    .social-links a:hover {
-      color: cyan;
-      transform: scale(1.2);
+    button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade {
+      animation: fadeIn 2s ease-in-out;
     }
   </style>
 </head>
 <body>
-  <h1>🚀 Harsh AI Labs</h1>
-  <p>Innovating the future of Artificial Intelligence — Coming Soon!</p>
+  <header class="fade">
+    <h1>🚀 Harsh AI Labs</h1>
+    <h2>Innovating the Future with Intelligence</h2>
+  </header>
 
-  <div id="countdown"></div>
-
-  <div class="social-links">
-    <a href="https://github.com/harsh-ai-labs" target="_blank">🐙 GitHub</a>
-    <a href="https://instagram.com/" target="_blank">📸 Instagram</a>
-    <a href="https://linkedin.com/" target="_blank">💼 LinkedIn</a>
+  <div class="section fade">
+    <h3>About Us</h3>
+    <p>
+      Welcome to <b>Harsh AI Labs</b> — a creative hub where innovation meets intelligence.
+      We build smart solutions, automation tools, and AI-based web projects that empower the future.
+    </p>
   </div>
 
-  <script>
-    // Countdown Timer
-    const targetDate = new Date("December 31, 2025 00:00:00").getTime();
+  <div class="section fade">
+    <h3>Our Projects</h3>
+    <p>Coming Soon... exciting AI projects are in development! ⚙️🤖</p>
+    <button onclick="alert('Stay tuned for AI projects! 🚀')">Notify Me</button>
+  </div>
 
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+  <div class="section fade">
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:harshailabs@gmail.com" style="color:#00d4ff;">harshailabs@gmail.com</a></p>
+  </div>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById(
-        "countdown"
-      ).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "🚀 Launched!";
-      }
-    }, 1000);
-  </script>
+  <footer>
+    © 2025 Harsh AI Labs | Built with ❤️ and Intelligence
+  </footer>
 </body>
 </html>
